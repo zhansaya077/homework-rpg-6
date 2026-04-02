@@ -1,7 +1,4 @@
 package com.narxoz.rpg.command;
-
-import com.narxoz.rpg.arena.ArenaFighter;
-
 public class DefendCommand implements ActionCommand {
     private ArenaFighter fighter;
     private double boost;
@@ -13,12 +10,12 @@ public class DefendCommand implements ActionCommand {
 
     @Override
     public void execute() {
-        fighter.increaseDodge(boost);
+        fighter.modifyDodgeChance(boost);
     }
 
     @Override
     public void undo() {
-        fighter.increaseDodge(-boost);
+        fighter.modifyDodgeChance(-boost);
     }
 
     @Override
