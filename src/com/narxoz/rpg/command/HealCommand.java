@@ -1,7 +1,4 @@
 package com.narxoz.rpg.command;
-
-import com.narxoz.rpg.arena.ArenaFighter;
-
 public class HealCommand implements ActionCommand {
     private ArenaFighter fighter;
     private int healAmount;
@@ -14,7 +11,14 @@ public class HealCommand implements ActionCommand {
 
     @Override
     public void execute() {
-        actualHeal = fighter.heal(healAmount);
+        int before = fighter.getHealth();
+
+        if (fighter.getHealPotions() > 0) {
+            fighter.heal(healAmount);
+        }
+
+        int after = fighter.getHealth();
+        actualHeal = after - before;
     }
 
     @Override
