@@ -31,3 +31,4 @@ public class HealCommand implements ActionCommand {
         return "Heal";
     }
 }
+
