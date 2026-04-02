@@ -1,7 +1,3 @@
-package com.narxoz.rpg.command;
-
-import com.narxoz.rpg.arena.*;
-
 public class AttackCommand implements ActionCommand {
     private ArenaFighter attacker;
     private ArenaOpponent opponent;
@@ -14,7 +10,7 @@ public class AttackCommand implements ActionCommand {
 
     @Override
     public void execute() {
-        damageDealt = Math.min(attacker.getAttackPower(), opponent.getHp());
+        damageDealt = Math.min(attacker.getAttackPower(), opponent.getHealth());
         opponent.takeDamage(damageDealt);
     }
 
